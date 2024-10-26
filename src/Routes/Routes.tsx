@@ -1,8 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import CartLayout from "../components/layout/CartLayout";
-import AboutUs from "../pages/AboutUs";
-import CheckOutPage from "../components/layout/ChecKout";
 import Login from "../pages/Authintacation/login";
 import Register from "../pages/Authintacation/registration";
 import AdminDasboard from "../pages/Authintacation/Dashboard/AdminDashboar";
@@ -20,6 +17,7 @@ import BookingConfirmationPage from "../pages/Products/Confirm";
 import PrivateRoute from "./PrivateRoute";
 import AddNew from "../pages/Products/AddNew";
 import EditPage from "../pages/Management/Table/UpdateFacility";
+import AboutUs from "../pages/AboutUs";
 
 export const route = createBrowserRouter([
   {
@@ -41,14 +39,6 @@ export const route = createBrowserRouter([
   {
     path: "/about",
     element: <AboutUs />,
-  },
-  {
-    path: "/cart",
-    element: <CartLayout />,
-  },
-  {
-    path: "/checkout",
-    element: <CheckOutPage />,
   },
 
   {

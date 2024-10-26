@@ -164,7 +164,7 @@ const AddNew = () => {
                     >
                       <DatePicker
                         onChange={(date, dateString) =>
-                          handleDateChange(date, dateString, index)
+                          handleDateChange(date, dateString)
                         }
                       />
                     </Form.Item>

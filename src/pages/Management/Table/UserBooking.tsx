@@ -46,7 +46,7 @@ const UserBooking = () => {
       setAllBookings(response.data);
 
       const filteredBookings = response.data.filter(
-        (booking) => booking.userID === userID
+        (booking: any) => booking.userID === userID
       );
       setUserBookings(filteredBookings);
     } catch (error) {

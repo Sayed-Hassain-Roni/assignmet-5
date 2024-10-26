@@ -38,13 +38,12 @@ const UpdateProduct: React.FC = () => {
       });
   }, [id]);
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setProduct((prev) => ({ ...prev, [name]: value }));
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    setProduct((prevState) => ({
+      ...prevState,
+      [name]: value === "true" || value === "false" ? value === "true" : value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -164,7 +163,10 @@ const UpdateProduct: React.FC = () => {
                   checked={product.isDeleted}
                   onChange={(e) =>
                     handleChange({
-                      target: { name: "isDeleted", value: e.target.checked },
+                      target: {
+                        name: "isDeleted",
+                        value: e.target.checked.toString(),
+                      },
                     })
                   }
                 />

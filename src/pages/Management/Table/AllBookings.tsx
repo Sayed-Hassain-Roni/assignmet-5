@@ -19,6 +19,7 @@ const AllBooking = () => {
     endTime: "",
     facility: "",
     isBooked: "",
+    _id: "",
   };
 
   const [products, setProduct] = useState([types]);

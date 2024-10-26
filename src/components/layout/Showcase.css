@@ -1,0 +1,11 @@
+.mosaic-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.mosaic-item {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}

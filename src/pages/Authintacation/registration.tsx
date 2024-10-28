@@ -76,7 +76,6 @@ const Register = () => {
           >
             <Select placeholder="Select a role">
               <Option value="user">User</Option>
-              <Option value="admin">Admin</Option>
             </Select>
           </Form.Item>
 

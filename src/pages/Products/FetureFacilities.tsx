@@ -22,9 +22,11 @@ const FetureFacility = () => {
   }, []);
 
   const FacilitiesRecords = () => {
-    axios.get("http://localhost:5000/api/facilities/").then((res) => {
-      setFacilities(res.data.data);
-    });
+    axios
+      .get("https://assignment-05-backend.vercel.app/api/facilities/")
+      .then((res) => {
+        setFacilities(res.data.data);
+      });
   };
 
   console.log(facilities);

@@ -10,7 +10,7 @@ const MakeAdmin = () => {
   const onFinish = async (values: any) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://assignment-05-backend.vercel.app/api/auth/signup",
         values
       );
       message.success("Add Admin Successful!");

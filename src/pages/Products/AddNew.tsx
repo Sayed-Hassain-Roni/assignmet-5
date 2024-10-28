@@ -70,13 +70,16 @@ const AddNew = () => {
     console.log(data);
 
     try {
-      const response = await fetch("http://localhost:5000/api/facility", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://assignment-05-backend.vercel.app/api/facility",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (!response.ok) throw new Error("Network response was not ok");
 

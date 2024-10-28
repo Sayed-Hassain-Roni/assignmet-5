@@ -29,9 +29,11 @@ const AllBooking = () => {
   }, []);
 
   const fetchRecords = () => {
-    axios.get("http://localhost:5000/api/bookings/allbookings").then((res) => {
-      setProduct(res.data);
-    });
+    axios
+      .get("https://assignment-05-backend.vercel.app/api/bookings/allbookings")
+      .then((res) => {
+        setProduct(res.data);
+      });
   };
 
   return (

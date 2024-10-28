@@ -53,7 +53,9 @@ const BookingPage = () => {
   useEffect(() => {
     const fetchFacilityDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/facility/${id}`);
+        const res = await axios.get(
+          `https://assignment-05-backend.vercel.app/api/facility/${id}`
+        );
         setFacility(res.data.data);
       } catch (error) {
         console.error("Error fetching facility details:", error);
@@ -72,7 +74,7 @@ const BookingPage = () => {
     try {
       const date = selectedDate.format("YYYY-MM-DD");
       const res = await axios.get(
-        `http://localhost:5000/api/check-availability?date=${date}&facilityId=${id}`
+        `https://assignment-05-backend.vercel.app/api/check-availability?date=${date}&facilityId=${id}`
       );
 
       if (res.data.availableSlots.length === 0) {
@@ -128,7 +130,7 @@ const BookingPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/bookings/create",
+        "https://assignment-05-backend.vercel.app/api/bookings/create",
         bookingData
       );
 

@@ -33,7 +33,7 @@ const TableDemo = () => {
 
   const fetchFacilities = () => {
     axios
-      .get("http://localhost:5000/api/facilities")
+      .get("https://assignment-05-backend.vercel.app/api/facilities")
       .then((res) => {
         const activeFacilities = res.data.data.filter(
           (facility: { isDeleted: any }) => !facility.isDeleted
@@ -46,7 +46,7 @@ const TableDemo = () => {
   // Delete product function
   const deleteUser = async (id: any) => {
     await axios
-      .delete(`http://localhost:5000/api/facility/${id}`)
+      .delete(`https://assignment-05-backend.vercel.app/api/facility/${id}`)
       .then(() => {
         setFacilities((prevProducts) =>
           prevProducts.filter((product) => product._id !== id)

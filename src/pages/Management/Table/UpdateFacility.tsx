@@ -29,7 +29,7 @@ const UpdateProduct: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/facility/${id}`)
+      .get(`https://assignment-05-backend.vercel.app/api/facility/${id}`)
       .then((response) => {
         setProduct(response.data.data);
       })
@@ -49,7 +49,10 @@ const UpdateProduct: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/facility/${id}`, product);
+      await axios.put(
+        `https://assignment-05-backend.vercel.app/api/facility/${id}`,
+        product
+      );
       message.success("Product Updated Successfully!");
       navigate("/facility");
     } catch (error) {

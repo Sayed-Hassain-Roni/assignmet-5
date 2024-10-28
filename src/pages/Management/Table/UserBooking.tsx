@@ -41,7 +41,7 @@ const UserBooking = () => {
   const fetchRecords = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/bookings/allbookings"
+        "https://assignment-05-backend.vercel.app/api/bookings/allbookings"
       );
       setAllBookings(response.data);
 

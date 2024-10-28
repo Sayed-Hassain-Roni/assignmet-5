@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Button, Col, Row, Spin } from "antd";
 import axios from "axios";
 import Container from "../../components/ui/container";
@@ -10,11 +10,10 @@ const FacilityDetails = () => {
   const { id } = useParams();
   const [facility, setFacility] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api//facility/${id}`)
+      .get(`https://assignment-05-backend.vercel.app/api/facility/${id}`)
       .then((res) => {
         setFacility(res.data.data);
         setLoading(false);

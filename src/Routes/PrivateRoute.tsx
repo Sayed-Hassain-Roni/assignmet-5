@@ -16,9 +16,7 @@ const PrivateRoute = ({ element, roleRequired }: PrivateRouteProps) => {
   }
 
   if (roleRequired && userRole !== roleRequired) {
-    message.error(
-      "Access denied. You do not have permission to view this page."
-    );
+    message.error("Admin detected!!.Only user can book facility. .");
     if (userRole === "admin") {
       return <Navigate to="/home" />;
     } else if (userRole === "user") {
